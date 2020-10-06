@@ -2,7 +2,7 @@ SotoLAB
 http://sotolab.kr
 Soto Jang, 2020.09.27
 
-½ÃÀÛ > cmd (°ü¸®ÀÚ·Î ½ÇÇà)
+ì‹œìž‘ > cmd (ê´€ë¦¬ìžë¡œ ì‹¤í–‰)
 
 $ cd c:\
 $ mkdir workspace\
@@ -16,9 +16,9 @@ Passphrase: eth
 Address: {2d3fd4fea881890b1097076884fd82136582f88c}
 > geth --datadir sotolab account list
 
-genesis.json ÆÄÀÏ°ú multi-genesis.json ÆÄÀÏÀ» c:\workspace\geth1918 Æú´õ¿¡ º¹»ç
+genesis.json íŒŒì¼ê³¼ multi-genesis.json íŒŒì¼ì„ c:\workspace\geth1918 í´ë”ì— ë³µì‚¬
 
-## Genesis.json ÆÄÀÏ¾È¿¡´Ù ¹æ±Ý ¸¸µç µÎ °³ÀÇ °èÁ¤À» º¹»çÇÏ±â (19¶óÀÎ, 22¶óÀÎ)
+## Genesis.json íŒŒì¼ì•ˆì—ë‹¤ ë°©ê¸ˆ ë§Œë“  ë‘ ê°œì˜ ê³„ì •ì„ ë³µì‚¬í•˜ê¸° (19ë¼ì¸, 22ë¼ì¸)
 
 $ geth  --datadir  sotolab  init  Genesis.json  
 $ geth  --datadir  sotolab  --networkid 15  console
@@ -28,14 +28,16 @@ $ geth  --datadir  sotolab  --networkid 15  console
 > personal.newAccount("eth")
 > miner.start()
 
-## DAG ÆÄÀÏ »ý¼ºÇÏ°í 100%±îÁö ±â´Ù¸²
-## DAG 100% ³¡³ª°í ³ª¸é ´Ù½Ã DAGÆÄÀÏ »ý¼ºÇÔ 100%±îÁö ±â´Ù¸²
+## DAG íŒŒì¼ ìƒì„±í•˜ê³  100%ê¹Œì§€ ê¸°ë‹¤ë¦¼
+## DAG 100% ëë‚˜ê³  ë‚˜ë©´ ë‹¤ì‹œ DAGíŒŒì¼ ìƒì„±í•¨ 100%ê¹Œì§€ ê¸°ë‹¤ë¦¼
 
 > miner.stop()
 
+> eth.blockNumber
+
 > exit
 
-$ ./geth --networkid 15 --nodiscover --maxpeers 0 --datadir sotolab --rpc --rpcaddr "0.0.0.0" --rpcport 8545 --rpccorsdomain "*" --rpcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" console 2>> geth.log
+$ geth --networkid 15 --nodiscover --maxpeers 0 --datadir sotolab --rpc --rpcaddr "0.0.0.0" --rpcport 8545 --rpccorsdomain "*" --rpcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" console 2>> geth.log
 
 https://ethereum.github.io/browser-solidity/
 
