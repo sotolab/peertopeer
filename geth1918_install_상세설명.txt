@@ -21,7 +21,7 @@ genesis.json 파일과 multi-genesis.json 파일을 c:\workspace\geth1918 폴더
 ## Genesis.json 파일안에다 방금 만든 두 개의 계정을 복사하기 (19라인, 22라인)
 
 $ geth  --datadir  sotolab  init  Genesis.json  
-$ geth  --datadir  sotolab  --networkid 15  console 2>> geth.log
+$ geth  --datadir  sotolab  --networkid 15  console 2>> logfie
 > eth.accounts
 > eth.getBalance(eth.accounts[0])
 > web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
