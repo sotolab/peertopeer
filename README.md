@@ -1,7 +1,10 @@
 # peertopeer
 peertopeer
 
+    1 notepad++
+    https://notepad-plus-plus.org/repository/7.x/7.0/npp.7.Installer.x64.exe
 
-    geth 1.9.18 download (64bit)
+
+    2 geth 1.9.18 download (64bit)
 
     https://gethstore.blob.core.windows.net/builds/geth-alltools-windows-amd64-1.9.18-f5382591.zip
