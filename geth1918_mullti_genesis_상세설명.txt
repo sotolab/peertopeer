@@ -1,0 +1,69 @@
+SotoLAB
+http://sotolab.kr
+Soto Jang, 2020.09.27
+
+시작 > cmd (관리자로 실행)
+
+$ cd c:\workspace\geth1918
+$ mkdir p1
+$ mkdir p2
+$ mkdir p3
+$ geth --datadir "p1" init multi-genesis.json
+$ geth --datadir "p2" init multi-genesis.json
+$ geth --datadir "p3" init multi-genesis.json
+$ geth --datadir "p1" --port 30301 --networkid 15 --ipcdisable console 2>> log1
+새로운 윈도우 열기
+$ geth --datadir "p2" --port 30302 --networkid 15 --ipcdisable console  2>> log2
+새로운 윈도우 열기
+$ geth --datadir "p3" --port 30303 --networkid 15 --ipcdisable console  2>> log3
+첫번째 노드 p1에서
+> personal.newAccount("eth")
+[0xb6d1de3437862165557919d5fbeef923299a148f]
+
+> admin.nodeInfo.enode
+"enode://8f288e577053333c49a6ae4728e117be06e6dc39243400af69439bcfbffc2500fd3c08568772c0c01accadb193fe9c3f29336dc2a08c19c9a1e4d111b017edab@0.0.0.0:30301"
+
+
+** 반드시 @0.0.0.0으로 수정해야 함
+** 반드시 @0.0.0.0으로 수정해야 함
+** 반드시 @0.0.0.0으로 수정해야 함
+
+두번째 노드 p2에서
+> personal.newAccount("eth")
+[0x376bd0ddd3f43d1cf60baea3c5792993cd118cd5]
+
+> admin.addPeer("enode://8053f07eee378dbb02a7e1f9a5585674ea6effad795594c2182d6b7ac2bc3d4464f49d09a8468c7c9ff9b70ed756910fe515e26b10c1bb19014721201bcfb128@0.0.0.0:30301")
+
+세번째 노드 p3에서
+> personal.newAccount("eth")
+[0x032875e095dc9319c2750db2a324209c765dee71]
+
+> admin.addPeer("enode://8053f07eee378dbb02a7e1f9a5585674ea6effad795594c2182d6b7ac2bc3d4464f49d09a8468c7c9ff9b70ed756910fe515e26b10c1bb19014721201bcfb128@0.0.0.0:30301")
+
+> miner.start()
+> miner.stop()
+> eth.blockNumber
+
+첫번째 노드 p1에서
+노드가 연결됐는지 확인
+> net.peerCount
+2
+
+첫번째 노드 p1에서
+> admin.peers
+
+세번째 노드 p3에서
+노드 p3의 어카운트에서 노드 p1의 어카운트에서 송금을 실행하고, 송금이 제대로 이루어졌는지 확인
+> personal.unlockAccount(eth.accounts[0], "eth")
+> eth.sendTransaction({from: eth.accounts[0], to:
+"0xf97f94fef2e704c819d9d813966b7e62d3840222", value: web3.toWei(1, "ether")})
+
+miner.start()
+miner.stop()
+
+첫번째 노드 p1의 어카운드 잔액 조회
+> web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+[ 1 ]
+
+
+
