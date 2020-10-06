@@ -1,8 +1,8 @@
 SotoLAB
-http://sotolab.kr
+https://sotoedu.herokuapp.com/
 Soto Jang, 2020.09.27
 
-½ÃÀÛ > cmd (°ü¸®ÀÚ·Î ½ÇÇà)
+ì‹œìž‘ > cmd (ê´€ë¦¬ìžë¡œ ì‹¤í–‰)
 
 $ cd c:\workspace\geth1918
 $ mkdir p1
@@ -12,11 +12,11 @@ $ geth --datadir "p1" init multi-genesis.json
 $ geth --datadir "p2" init multi-genesis.json
 $ geth --datadir "p3" init multi-genesis.json
 $ geth --datadir "p1" --port 30301 --networkid 15 --ipcdisable console 2>> log1
-»õ·Î¿î À©µµ¿ì ¿­±â
+ìƒˆë¡œìš´ ìœˆë„ìš° ì—´ê¸°
 $ geth --datadir "p2" --port 30302 --networkid 15 --ipcdisable console  2>> log2
-»õ·Î¿î À©µµ¿ì ¿­±â
+ìƒˆë¡œìš´ ìœˆë„ìš° ì—´ê¸°
 $ geth --datadir "p3" --port 30303 --networkid 15 --ipcdisable console  2>> log3
-Ã¹¹øÂ° ³ëµå p1¿¡¼­
+ì²«ë²ˆì§¸ ë…¸ë“œ p1ì—ì„œ
 > personal.newAccount("eth")
 [0xb6d1de3437862165557919d5fbeef923299a148f]
 
@@ -24,17 +24,17 @@ $ geth --datadir "p3" --port 30303 --networkid 15 --ipcdisable console  2>> log3
 "enode://8f288e577053333c49a6ae4728e117be06e6dc39243400af69439bcfbffc2500fd3c08568772c0c01accadb193fe9c3f29336dc2a08c19c9a1e4d111b017edab@0.0.0.0:30301"
 
 
-** ¹Ýµå½Ã @0.0.0.0À¸·Î ¼öÁ¤ÇØ¾ß ÇÔ
-** ¹Ýµå½Ã @0.0.0.0À¸·Î ¼öÁ¤ÇØ¾ß ÇÔ
-** ¹Ýµå½Ã @0.0.0.0À¸·Î ¼öÁ¤ÇØ¾ß ÇÔ
+** ë°˜ë“œì‹œ @0.0.0.0ìœ¼ë¡œ ìˆ˜ì •í•´ì•¼ í•¨
+** ë°˜ë“œì‹œ @0.0.0.0ìœ¼ë¡œ ìˆ˜ì •í•´ì•¼ í•¨
+** ë°˜ë“œì‹œ @0.0.0.0ìœ¼ë¡œ ìˆ˜ì •í•´ì•¼ í•¨
 
-µÎ¹øÂ° ³ëµå p2¿¡¼­
+ë‘ë²ˆì§¸ ë…¸ë“œ p2ì—ì„œ
 > personal.newAccount("eth")
 [0x376bd0ddd3f43d1cf60baea3c5792993cd118cd5]
 
 > admin.addPeer("enode://8053f07eee378dbb02a7e1f9a5585674ea6effad795594c2182d6b7ac2bc3d4464f49d09a8468c7c9ff9b70ed756910fe515e26b10c1bb19014721201bcfb128@0.0.0.0:30301")
 
-¼¼¹øÂ° ³ëµå p3¿¡¼­
+ì„¸ë²ˆì§¸ ë…¸ë“œ p3ì—ì„œ
 > personal.newAccount("eth")
 [0x032875e095dc9319c2750db2a324209c765dee71]
 
@@ -44,16 +44,16 @@ $ geth --datadir "p3" --port 30303 --networkid 15 --ipcdisable console  2>> log3
 > miner.stop()
 > eth.blockNumber
 
-Ã¹¹øÂ° ³ëµå p1¿¡¼­
-³ëµå°¡ ¿¬°áµÆ´ÂÁö È®ÀÎ
+ì²«ë²ˆì§¸ ë…¸ë“œ p1ì—ì„œ
+ë…¸ë“œê°€ ì—°ê²°ëëŠ”ì§€ í™•ì¸
 > net.peerCount
 2
 
-Ã¹¹øÂ° ³ëµå p1¿¡¼­
+ì²«ë²ˆì§¸ ë…¸ë“œ p1ì—ì„œ
 > admin.peers
 
-¼¼¹øÂ° ³ëµå p3¿¡¼­
-³ëµå p3ÀÇ ¾îÄ«¿îÆ®¿¡¼­ ³ëµå p1ÀÇ ¾îÄ«¿îÆ®¿¡¼­ ¼Û±ÝÀ» ½ÇÇàÇÏ°í, ¼Û±ÝÀÌ Á¦´ë·Î ÀÌ·ç¾îÁ³´ÂÁö È®ÀÎ
+ì„¸ë²ˆì§¸ ë…¸ë“œ p3ì—ì„œ
+ë…¸ë“œ p3ì˜ ì–´ì¹´ìš´íŠ¸ì—ì„œ ë…¸ë“œ p1ì˜ ì–´ì¹´ìš´íŠ¸ì—ì„œ ì†¡ê¸ˆì„ ì‹¤í–‰í•˜ê³ , ì†¡ê¸ˆì´ ì œëŒ€ë¡œ ì´ë£¨ì–´ì¡ŒëŠ”ì§€ í™•ì¸
 > personal.unlockAccount(eth.accounts[0], "eth")
 > eth.sendTransaction({from: eth.accounts[0], to:
 "0xf97f94fef2e704c819d9d813966b7e62d3840222", value: web3.toWei(1, "ether")})
@@ -61,7 +61,7 @@ $ geth --datadir "p3" --port 30303 --networkid 15 --ipcdisable console  2>> log3
 miner.start()
 miner.stop()
 
-Ã¹¹øÂ° ³ëµå p1ÀÇ ¾îÄ«¿îµå ÀÜ¾× Á¶È¸
+ì²«ë²ˆì§¸ ë…¸ë“œ p1ì˜ ì–´ì¹´ìš´ë“œ ìž”ì•¡ ì¡°íšŒ
 > web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
 [ 1 ]
 
