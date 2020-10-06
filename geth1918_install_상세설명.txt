@@ -1,5 +1,5 @@
 SotoLAB
-http://sotolab.kr
+https://sotoedu.herokuapp.com/
 Soto Jang, 2020.09.27
 
 시작 > cmd (관리자로 실행)
